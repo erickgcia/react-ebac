@@ -1,0 +1,118 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  background-color: #EEEEEE;
+  padding: 2rem;
+  border-bottom: 2px solid #393E46;
+  box-shadow: #393E46 0px 2px 5px 0px;
+  .header__img {
+    width: 60px;
+  }
+}
+
+.nav {
+  display: flex;
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nav__list-item {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 700;
+    list-style: none;
+    .nav__list-link {
+      text-decoration: none;
+      color: #393E46;
+      transition: all 300ms ease;
+      &:hover {
+        color: #929AAB;
+      }
+    }
+  }
+}
+
+.subheader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  padding: 4rem 6rem;
+  width: 100%;
+  background-color: #393E46;
+  color: #EEEEEE;
+  .subheader__wrapper {
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border-bottom: 2px solid #EEEEEE;
+    @media screen and (width <= 1024px) {
+      gap: 3rem;
+    }
+    .subheader__title {
+      font-size: clamp(4rem, 6vw, 8rem);
+      font-weight: 700;
+    }
+    .subheader__txt {
+      width: 50%;
+      font-size: clamp(1.25rem, 1.5vw, 2.75rem);
+      padding-bottom: 3rem;
+      @media screen and (width <= 1024px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.btn {
+  width: fit-content;
+  font-weight: 700;
+  text-align: center;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  box-shadow: #EEEEEE 0px 0px 10px 0px;
+  transition: all 500ms ease;
+  &.btn--primary {
+    border: 2px solid #EEEEEE;
+    background-color: #EEEEEE;
+    color: #121212;
+  }
+  &.btn--secondary {
+    border: 2px solid #121212;
+    background-color: #121212;
+    color: #EEEEEE;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 1rem;
+  padding: 4rem;
+  background-color: #242424;
+  .gallery__title {
+    grid-area: -1 / -1 / 1 / 1;
+    font-size: clamp(2rem, 5vw, 6rem);
+    text-align: center;
+    font-weight: 700;
+    padding-block: 1rem;
+    color: #EEEEEE;
+  }
+  .gallery__img {
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    aspect-ratio: 1;
+    transition: all 300ms ease;
+    &:hover {
+      transform: scale(0.97);
+    }
+  }
+}
