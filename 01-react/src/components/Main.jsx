@@ -16,7 +16,7 @@ export const Main = () => {
 
   return(
     <main>
-        <PageTitleSection title='Design & Home' />
+        <PageTitleSection title='Lorem Ipsum' />
         <Gallery gallery={gallery} />
     </main>
   )
