@@ -1,0 +1,56 @@
+.filter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  label {
+    .filter__input { 
+      flex-grow: 1;
+      border-radius: 5px;
+      background-color: #fefefe;
+      border: none;
+      padding: 0.5rem 1rem;
+      width: 100%;
+    }
+  }
+  .filter__btn {
+    border-radius: 5px;
+    padding: 0.35rem 1rem;
+    font-weight: 700;
+    background-color: #121212;
+    color: #fefefe;
+    border: 1px solid #fefefe;
+    transition: all 200ms ease;
+    &:hover {
+      background-color: #fefefe;
+      color: #121212;
+      border: 1px solid #121212;
+    }
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+  th,
+  td {
+    border: 1px solid #fefefe;
+    padding: 0.5rem;
+  }
+}
+
+section {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: auto;
+  scroll-snap-type: proximity;
+  scrollbar-color: #121212;
+  padding: 2rem;
+  height: 600px;
+  border: 10px solid rgb(50, 45, 45);
+  border-radius: 10px;
+}
