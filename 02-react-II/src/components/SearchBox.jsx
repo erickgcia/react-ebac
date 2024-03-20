@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 
 export function SearchBox({ updateDataCountries }) {
 
-  const [country, setCountryInput] = useState('');
+  const [country, setCountry] = useState('');
 
   const handleChange = (e) => {
-    setCountryInput(e.target.value);
+    setCountry(e.target.value);
   };
 
   const getData = async () => {
