@@ -5,13 +5,13 @@ export const Nav = ({list}) => {
     <nav className='nav'>
       <ul className='nav__list'>
         {
-          list.map((item, index) => (
+          list.map((listValue, index) => (
           <li className='nav__list-item' key={index}>
             <NavLink
               className='nav__list-link'
-              href={`${item}.jsx`}
+              to={`/${listValue.toLowerCase()}`}
               key={index}>
-              {item}
+              {listValue}
             </NavLink>
           </li>
           ))

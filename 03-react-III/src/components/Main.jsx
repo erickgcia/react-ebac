@@ -19,12 +19,10 @@ export const Main = () => {
       'Automotive AI',
       'Generative AI'
     ];
-  
-    let currIndex = 0;
-  
+    let i = 0
     const interval = setInterval(() => {
-      setTitle(nextTitles[currIndex]);
-      currIndex = (currIndex + 1) % nextTitles.length;
+      i >= nextTitles.length ? 0 : i + 1
+      setTitle(nextTitles[i]);
     }, 3000);
   
     return () => clearInterval(interval);

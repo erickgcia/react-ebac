@@ -1,18 +1,14 @@
 import { Button } from './Button.jsx'
 import { Nav } from './Nav.jsx'
-import Logo from '../assets/react.svg'
+import { Link } from 'react-router-dom'
 
-export const Header = () => {
-  const data = {
-    logo: Logo,
-    logoDesc: 'Description of the logo',
-    list: ['Products', 'Government', 'Customers', 'Resources'],
-  }
-
+export const Header = ({data}) => {
   return (
     <header className='header'>
-      <img className='header__logo' src={data.logo} alt={data.logoDesc} />
-      <Nav list={data.list} href={data.list} />
+      <Link to="/">
+        <img className='header__logo' src={data.logo} alt={data.logoDesc} />
+      </Link>
+      <Nav list={data.list} />
       <div className='btn-wrapper'>
         <Button text='Book a Demo' />
         <Button modifier='btn--transparent' text='Log in' />

@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 
 export const ErrorPage = () => {
   return(
-    <section>
-      <div>
-        <h1>Oops | 404 Error</h1>
-        <h2>Something went wrong</h2>
+    <section className='error'>
+      <div className='error__box'>
+        <h1>404 Error | Something went wrong</h1>
+        <p>Go back to the main page 👇</p>
+        <Link className='error__link' to='/'>Home</Link>
       </div>
-        <Link to='/'>Home</Link>
     </section>
   )
 }

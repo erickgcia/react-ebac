@@ -2,8 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { HomePage } from './pages/HomePage.jsx'
-import { ProfilesPage } from './pages/ProfilesPage.jsx'
-import { ProfilePage } from './pages/ProfilePage.jsx'
+import { ProductsPage } from './pages/ProductsPage.jsx'
 import { ErrorPage } from './pages/ErrorPage.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -14,13 +13,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
-    path: '/profiles',
-    element: <ProfilesPage />,
+    path: '/products',
+    element: <ProductsPage />,
   },
-  {
-    path: '/profiles/:profileUsername',
-    element: <ProfilePage />
-  }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

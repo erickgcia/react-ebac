@@ -121,7 +121,7 @@ a {
   flex-direction: column;
   gap: 2rem;
   padding: 4rem;
-  width: 50%;
+  width: 55%;
   @media screen and (width <= 1060px) {
     align-items: center;
     justify-content: center;
@@ -156,6 +156,36 @@ a {
   padding: 2rem;
   .brands__logo {
     width: min(80px, 15%);
+  }
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+}
+
+.error {
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+  .error__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    font-size: var(--fontSize-lg);
+    font-weight: 700;
+  }
+  .error__link {
+    color: var(--blue);
+    transition: color 300ms ease;
+    &:hover {
+      color: var(--white);
+    }
   }
 }
 
