@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { HomePage } from './pages/HomePage.jsx'
 import { ProductsPage } from './pages/ProductsPage.jsx'
+import { CustomersPage } from './pages/CustomersPage.jsx'
 import { ErrorPage } from './pages/ErrorPage.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     path: '/products',
     element: <ProductsPage />,
   },
+  {
+    path: '/customers',
+    element: <CustomersPage />,
+  }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
