@@ -1,31 +1,15 @@
-import { useEffect, useState } from "react"
-import axios from 'axios'
+import { useFetch } from "../hooks/useFetch"
+import { Loading } from "./Loading"
 
 export const Products = () => {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://fakestoreapi.com/products')
-        setProducts(response.data)
-        setLoading(false)
-      } catch(err) {
-        console.error(err)
-      }
-    }
-
-    fetchData()
-  }, [])
+  const { data , isLoading, error } = useFetch({url: 'https://fakestoreapi.com/products', type: 'get'})
+  if(error) (<div>{error.message}</div>)
 
   return (
     <article className="products">
-      {loading ?
-        <div className='loading'>
-          <h1>Loading...</h1>
-        </div> :
-        products.map((product, index) => (
+      {isLoading ?
+        <Loading text='products'/> :
+        data.map((product, index) => (
           <section key={index} className="products__card">
             <img className="products__card-img" src={product.image} alt={product.title} />
             <div className='products__wrapper'>

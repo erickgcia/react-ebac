@@ -11,27 +11,29 @@ import logo8 from '../assets/client-logo-8.svg';
 import { useEffect, useState } from 'react'
 
 export const Main = () => {
-  const [title, setTitle] = useState('Generative AI')
+  const [title, setTitle] = useState('Special word')
 
   useEffect(() => {
     const nextTitles = [
-      'Government AI',
-      'Automotive AI',
-      'Generative AI'
+      'Next word 2',
+      'Next word 3',
+      'Special word'
     ];
-    let i = 0
+    let index = 0
     const interval = setInterval(() => {
-      i >= nextTitles.length ? 0 : i + 1
-      setTitle(nextTitles[i]);
-    }, 3000);
-  
-    return () => clearInterval(interval);
-  
+      setTitle(nextTitles[index])
+      index++
+      if(index === nextTitles.length) {
+        index = 0
+      }
+    }, 3000)
+
+    return () => clearInterval(interval)
   }, []);
 
   const info = {
     title: title,
-    subtitle: 'Better data leads to more perfomant models. Performant models lead to faster deployment. Deliver value from your AI investments faster with better data.'
+    subtitle: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure quia nulla itaque in autem cum voluptates soluta velit adipisci id.'
   }
 
   const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8]
