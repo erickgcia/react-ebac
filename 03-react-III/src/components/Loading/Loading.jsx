@@ -1,7 +1,9 @@
+import { StyledLoading } from "./styles"
+
 export const Loading = ({text}) => {
   return (
-    <div className='loading'>
+    <StyledLoading>
       <h1>Loading {text}...</h1>
-    </div>
+    </StyledLoading>
   )
 }

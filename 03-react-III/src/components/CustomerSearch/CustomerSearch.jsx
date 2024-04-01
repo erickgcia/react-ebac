@@ -1,6 +1,7 @@
 import { useState } from "react"
-import { useFetch } from "../hooks/useFetch"
-import { Loading } from "./Loading"
+import { useFetch } from "../../hooks/useFetch.jsx"
+import { Loading } from "../Loading/Loading.jsx"
+import { Customers, ScrollContainer, Search, Table } from "./styles.js"
 
 export const CustomerSearch = () => {
 
@@ -11,11 +12,10 @@ export const CustomerSearch = () => {
   }
 
   return (
-    <main className="customers">
+    <Customers>
       <form>
         <label htmlFor="search">
-          <input
-            className="search"
+          <Search
             id='search'
             name='search' 
             type='search' 
@@ -27,8 +27,8 @@ export const CustomerSearch = () => {
       </form>
       {isLoading ?
         <Loading text='customers'/> :
-        <section className='scroll-container'>
-          <table className="table">
+        <ScrollContainer>
+          <Table>
             <thead>
               <tr>
                 <th>Country</th>
@@ -47,9 +47,9 @@ export const CustomerSearch = () => {
                 ))
               }
             </tbody>
-          </table>
-        </section>
+          </Table>
+        </ScrollContainer>
       }
-    </main>
+    </Customers>
     )
 }

@@ -1,13 +1,14 @@
+import { BrandsSection, BrandsLogo } from './styles.js'
+
 export const Brands = ({logos}) => {
   return (
-    <section className="brands">
+    <BrandsSection>
       {logos.map((logo, index) => (
-        <img
+        <BrandsLogo
           key={index}
-          className="brands__logo"
           src={logo} 
           alt='Logo' />
       ))}
-    </section>
+    </BrandsSection>
   )
 }
