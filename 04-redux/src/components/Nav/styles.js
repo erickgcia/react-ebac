@@ -7,6 +7,10 @@ const StyledNav = styled.nav`
   align-items: center;
   justify-content: center;
   margin-left: 15%;
+
+  @media screen and (width <= 1024px) {
+    display: none;
+  }
 `
 
 const NavList = styled.ul`

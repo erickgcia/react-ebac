@@ -1,3 +1,15 @@
+import {
+  CardColors,
+  CardDescription,
+  CardImg,
+  CardInfo,
+  CardPrice,
+  CardStatus,
+  CardTitle,
+  StyledCard,
+  CardButton,
+} from './styles'
+
 export const Card = ({
   img,
   itemStatus,
@@ -5,17 +17,19 @@ export const Card = ({
   description,
   colors,
   price,
+  addCartProduct,
 }) => {
   return (
-    <section>
-      <img src={img} alt={title} />
-      <div>
-        <span>{itemStatus}</span>
-        <strong>{title}</strong>
-        <p>{description}</p>
-        <p>{colors}</p>
-        <strong>{price}</strong>
-      </div>
-    </section>
+    <StyledCard>
+      <CardImg src={img} alt={title} />
+      <CardInfo>
+        <CardStatus>{itemStatus}</CardStatus>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+        <CardColors>{colors}</CardColors>
+        <CardPrice>{price}</CardPrice>
+        <CardButton onClick={addCartProduct}>Add to Cart</CardButton>
+      </CardInfo>
+    </StyledCard>
   )
 }

@@ -1,20 +1,34 @@
-import { PRODUCTS_DATA } from '../../constants/products'
+import { useState } from 'react'
+import productsData from '../../constants/products'
+import { Card } from './Card'
+import { CardsContainer } from './styles'
 
 export const Products = () => {
+  const [cartProducts, setCartProducts] = useState([])
+
+  const addCartProduct = (product) => {
+    setCartProducts([...cartProducts, product])
+  }
   return (
     <main>
-      <article>
-        {PRODUCTS_DATA.map((product) => (
+      <CardsContainer>
+        {productsData.map((product) => (
           <Card
+            key={product.id}
             img={product.img}
             itemStatus={product.itemStatus}
             title={product.title}
             description={product.description}
-            colors={product.colors}
-            price={product.price}
+            colors={
+              product.colors <= 1
+                ? `${product.colors} Color`
+                : `${product.colors} Colors`
+            }
+            price={`$ ${product.price}`}
+            addCartProduct={addCartProduct}
           />
         ))}
-      </article>
+      </CardsContainer>
     </main>
   )
 }

@@ -3,9 +3,12 @@ import styled from 'styled-components'
 
 const CardsContainer = styled.article`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-template-rows: auto;
-  gap: 1rem;
+  place-items: center;
+  gap: 2rem;
+  padding: 3rem;
+  box-sizing: border-box;
 `
 
 export { CardsContainer }
