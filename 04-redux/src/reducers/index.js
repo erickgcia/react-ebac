@@ -1,21 +1,8 @@
-/* const initialState = {
-  products: [],
-}
+import { combineReducers } from 'redux'
+import { productsReducer } from './products'
 
-export const r = (state = initialState, action) => {
-  switch (action.payload) {
-    case 'ADD_PRODUCTS':
-      return {
-        ...state,
-        action,
-      }
-    case 'REMOVE_PRODUCTS':
-      return {
-        ...state,
-        action,
-      }
-    default:
-      return state
-  }
-}
- */
+const rootReducer = combineReducers({
+  products: productsReducer,
+})
+
+export default rootReducer

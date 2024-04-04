@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux'
 import {
   CardColors,
   CardDescription,
@@ -10,18 +11,24 @@ import {
   CardButton,
   DeleteIcon,
 } from './styles'
+import { addProducts, removeProducts } from '../../../actions'
 
-export const Card = ({ addProduct, product, display }) => {
-  const handleClick = () => {
-    addProduct(product)
+export const Card = ({ product, display }) => {
+  const { id, img, title, itemStatus, description, colors, price } = product
+  const dispatch = useDispatch()
+
+  const handleAddProduct = () => {
+    dispatch(addProducts(product))
   }
 
-  const { id, img, title, itemStatus, description, colors, price } = product
+  const handleOnRemove = () => {
+    dispatch(removeProducts(id))
+  }
 
   return (
     <StyledCard key={id} display={display}>
       {display ? (
-        <DeleteIcon>
+        <DeleteIcon onClick={handleOnRemove}>
           <i className="fa-solid fa-minus fa-lg"></i>
         </DeleteIcon>
       ) : null}
@@ -34,7 +41,7 @@ export const Card = ({ addProduct, product, display }) => {
           {colors <= 1 ? `${colors} Color` : `${colors} Colors`}
         </CardColors>
         <CardPrice>{`$${price}`}</CardPrice>
-        <CardButton display={display} onClick={handleClick}>
+        <CardButton display={display} onClick={handleAddProduct}>
           Add to Cart
         </CardButton>
       </CardInfo>

@@ -1,14 +1,13 @@
-/* export const addProducts = () => {
+export const addProducts = (product) => {
   return {
-    name: 'ADD_PRODUCTS',
-    payload: products.filter((product) => product.id !== product.action),
+    type: 'ADD_PRODUCTS',
+    payload: product,
   }
 }
 
-export const removeProducts = () => {
+export const removeProducts = (id) => {
   return {
-    name: 'REMOVE_PRODUCTS',
+    type: 'REMOVE_PRODUCTS',
     payload: id,
   }
 }
- */

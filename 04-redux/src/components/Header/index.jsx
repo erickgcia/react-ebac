@@ -1,17 +1,26 @@
 import { HeaderSection, StyledHeader, StyledLogo } from './styles'
 import { Nav } from '../Nav'
 import { SearchForm } from '../SearchForm'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Cart } from '../Cart'
-import products from '../../constants/products'
+import { useSelector } from 'react-redux'
 
 export const Header = () => {
   const list = ['Men', 'Women', 'Kids', 'Accesories']
   const [isCartVisible, setIsCartVisible] = useState(false)
-
+  const products = useSelector((state) => state.products.products)
   const handleToggleClick = () => {
     setIsCartVisible(!isCartVisible)
   }
+
+  useEffect(() => {
+    if (products.length === 1) {
+      return setIsCartVisible(true)
+    }
+    if (products.length === 0) {
+      return setIsCartVisible(false)
+    }
+  }, [handleToggleClick])
   return (
     <StyledHeader>
       <StyledLogo src="https://picsum.photos/55" alt="Random picture" />
@@ -24,7 +33,7 @@ export const Header = () => {
           onClick={handleToggleClick}
         />
       </HeaderSection>
-      <Cart products={products} show={isCartVisible} />
+      <Cart show={isCartVisible} />
     </StyledHeader>
   )
 }
