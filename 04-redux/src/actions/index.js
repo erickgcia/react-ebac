@@ -11,3 +11,10 @@ export const removeProducts = (id) => {
     payload: id,
   }
 }
+
+export const checkCart = (visible) => {
+  return {
+    type: 'CHECK_CART',
+    payload: visible,
+  }
+}

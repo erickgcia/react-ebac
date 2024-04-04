@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const CartSection = styled.article`
   position: absolute;
   top: 75px;
-  right: ${(props) => (props.show ? '0' : '-500px')};
+  right: ${(props) => (props.visible ? '0' : '-500px')};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

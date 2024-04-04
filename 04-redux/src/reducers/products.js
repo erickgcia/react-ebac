@@ -62,6 +62,7 @@ const initialState = {
     },
   ],
   cart: [],
+  cartVisible: false,
 }
 
 export const productsReducer = (state = initialState, action) => {
@@ -77,6 +78,11 @@ export const productsReducer = (state = initialState, action) => {
         cart: state.cart.filter(
           (cartProduct) => cartProduct.id !== action.payload
         ),
+      }
+    case 'CHECK_CART':
+      return {
+        ...state,
+        cartVisible: action.payload,
       }
     default:
       return state

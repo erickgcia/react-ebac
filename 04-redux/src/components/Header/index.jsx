@@ -1,26 +1,19 @@
 import { HeaderSection, StyledHeader, StyledLogo } from './styles'
 import { Nav } from '../Nav'
 import { SearchForm } from '../SearchForm'
-import { useEffect, useState } from 'react'
 import { Cart } from '../Cart'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { checkCart } from '../../actions'
 
 export const Header = () => {
   const list = ['Men', 'Women', 'Kids', 'Accesories']
-  const [isCartVisible, setIsCartVisible] = useState(false)
-  const cart = useSelector((state) => state.data.cart)
-  const handleToggleClick = () => {
-    setIsCartVisible(!isCartVisible)
+  const dispatch = useDispatch()
+  const visible = useSelector((state) => state.data.cartVisible)
+
+  const handleVisibleCart = () => {
+    dispatch(checkCart(!visible))
   }
 
-  useEffect(() => {
-    if (cart.length === 1) {
-      return setIsCartVisible(true)
-    }
-    if (cart.length === 0) {
-      return setIsCartVisible(false)
-    }
-  }, [handleToggleClick])
   return (
     <StyledHeader>
       <StyledLogo src="https://picsum.photos/55" alt="Random picture" />
@@ -30,10 +23,10 @@ export const Header = () => {
         <i className="fa-regular fa-heart fa-lg" />
         <i
           className="fa-solid fa-cart-shopping fa-lg"
-          onClick={handleToggleClick}
+          onClick={handleVisibleCart}
         />
       </HeaderSection>
-      <Cart show={isCartVisible} />
+      <Cart visible={visible} />
     </StyledHeader>
   )
 }

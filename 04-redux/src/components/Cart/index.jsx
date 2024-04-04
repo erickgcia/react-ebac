@@ -2,10 +2,10 @@ import { useSelector } from 'react-redux'
 import { Card } from '../Products/Card'
 import { CartButton, CartSection, CartTitle, EmptyCart } from './styles'
 
-export const Cart = ({ show }) => {
+export const Cart = ({ visible }) => {
   const cart = useSelector((state) => state.data.cart)
   return (
-    <CartSection show={show ? show : undefined}>
+    <CartSection visible={visible}>
       <CartTitle>Cart</CartTitle>
       <section>
         {cart.length > 0 ? (
