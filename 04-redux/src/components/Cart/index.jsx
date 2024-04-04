@@ -1,16 +1,17 @@
-import { useState } from 'react'
+import { useAddCart } from '../../hooks/useAddCart'
 import { Card } from '../Products/Card'
-import { CartButton, CartSection, CartTitle } from './styles'
-import { useEffect } from 'react'
+import { CartButton, CartSection, CartTitle, EmptyCart } from './styles'
 
-export const Cart = ({ isVisible }) => {
-  const [isEmpty, setIsEmpty] = useState(true)
+export const Cart = ({ products, show }) => {
+  const addProduct = useAddCart()
 
   return (
-    <CartSection isVisible={isVisible}>
+    <CartSection show={show ? show : undefined}>
       <CartTitle>Cart</CartTitle>
       <section>
-        {isEmpty ? <p>Nothing yet in your cart...</p> : <Card />}
+        {products.map((product) => (
+          <Card display="cart" product={product} addProduct={addProduct} />
+        ))}
       </section>
       <CartButton>Checkout</CartButton>
     </CartSection>

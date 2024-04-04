@@ -4,12 +4,12 @@ import styled from 'styled-components'
 const CartSection = styled.article`
   position: absolute;
   top: 75px;
-  right: ${(props) => (props.isVisible ? '0' : '-1000px')};
+  right: ${(props) => (props.show ? '0' : '-500px')};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
-  width: 300px;
+  width: 400px;
   padding: 1rem;
   box-sizing: border-box;
   background-color: var(--white);
@@ -37,4 +37,9 @@ const CartButton = styled.button`
   }
 `
 
-export { CartSection, CartTitle, CartButton }
+const EmptyCart = styled.p`
+  font-weight: 700;
+  text-align: center;
+`
+
+export { CartSection, CartTitle, CartButton, EmptyCart }

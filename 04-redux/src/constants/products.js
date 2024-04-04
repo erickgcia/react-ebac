@@ -13,7 +13,7 @@ const PRODUCTS_DATA = [
     title: 'Nike Air Max Dn',
     description: "Women's Shoes",
     colors: 9,
-    price: 1,
+    price: 150,
   },
   {
     img: shoes2,
@@ -22,7 +22,7 @@ const PRODUCTS_DATA = [
     title: 'Nike Dunk Low Retro',
     description: 'Skate Shoes',
     colors: 7,
-    price: 1,
+    price: 130,
   },
   {
     img: shoes3,
@@ -31,7 +31,7 @@ const PRODUCTS_DATA = [
     title: 'Nike Zoom Vomero 5 SE',
     description: 'Easy On/Off Shoes',
     colors: 3,
-    price: 1,
+    price: 220,
   },
   {
     img: shoes4,
@@ -40,7 +40,7 @@ const PRODUCTS_DATA = [
     title: 'Nike Air Max 1',
     description: "Men's Shoes",
     colors: 1,
-    price: 1,
+    price: 150,
   },
   {
     img: shoes5,
@@ -49,7 +49,7 @@ const PRODUCTS_DATA = [
     title: 'Nike Air More Tempo',
     description: 'Shoes',
     colors: 1,
-    price: 1,
+    price: 100,
   },
   {
     img: shoes6,
@@ -58,7 +58,7 @@ const PRODUCTS_DATA = [
     title: 'Nike Calm',
     description: "Men's Slides",
     colors: 8,
-    price: 1,
+    price: 50,
   },
 ]
 
