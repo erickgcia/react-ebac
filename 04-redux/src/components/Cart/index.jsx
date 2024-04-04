@@ -3,13 +3,13 @@ import { Card } from '../Products/Card'
 import { CartButton, CartSection, CartTitle, EmptyCart } from './styles'
 
 export const Cart = ({ show }) => {
-  const products = useSelector((state) => state.products.products)
+  const cart = useSelector((state) => state.data.cart)
   return (
     <CartSection show={show ? show : undefined}>
       <CartTitle>Cart</CartTitle>
       <section>
-        {products.length > 0 ? (
-          products.map((product) => (
+        {cart.length > 0 ? (
+          cart.map((product) => (
             <Card display="cart" product={product} key={product.id} />
           ))
         ) : (

@@ -8,16 +8,16 @@ import { useSelector } from 'react-redux'
 export const Header = () => {
   const list = ['Men', 'Women', 'Kids', 'Accesories']
   const [isCartVisible, setIsCartVisible] = useState(false)
-  const products = useSelector((state) => state.products.products)
+  const cart = useSelector((state) => state.data.cart)
   const handleToggleClick = () => {
     setIsCartVisible(!isCartVisible)
   }
 
   useEffect(() => {
-    if (products.length === 1) {
+    if (cart.length === 1) {
       return setIsCartVisible(true)
     }
-    if (products.length === 0) {
+    if (cart.length === 0) {
       return setIsCartVisible(false)
     }
   }, [handleToggleClick])
