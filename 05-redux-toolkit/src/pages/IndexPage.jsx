@@ -6,15 +6,15 @@ import { SkeletonLayout } from '../components/SkeletonLayout'
 
 export const IndexPage = () => {
   const { data, loading } = useAxiosFetch({
-    url: 'https://fakestoreapi.com/products?limit=10',
+    url: 'https://fakestoreapi.com/products?limit=12',
   })
 
   const productCartCounter = useSelector((state) => state.cart.productCount)
   const navigate = useNavigate()
   return (
     <>
-      <header className="flex items-center justify-between px-8 py-4">
-        <h1 className="text-center text-white font-bold text-2xl">Products</h1>
+      <header className="flex items-center justify-between px-8 py-6 border-b-2 border-b-black sticky top-0 bg-white">
+        <h1 className="text-center font-bold text-2xl">Products</h1>
         <div className="relative w-14">
           <i
             onClick={() => navigate('/cart')}
@@ -31,10 +31,10 @@ export const IndexPage = () => {
         </div>
       </header>
       <main>
-        <article className="flex gap-4 flex-wrap items-center justify-center p-4">
+        <article className="flex gap-4 flex-wrap items-center justify-center p-12">
           {!loading ? (
-            data.map((product, index) => (
-              <ProductCard product={product} key={index} />
+            data.map((product) => (
+              <ProductCard product={product} key={product.id} />
             ))
           ) : (
             <SkeletonLayout />

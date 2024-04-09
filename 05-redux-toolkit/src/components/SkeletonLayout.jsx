@@ -1,6 +1,5 @@
 export const SkeletonLayout = () => {
   const arr = Array(10).fill(0)
-  console.log(arr)
   return arr.map((skeleton, index) => (
     <article
       key={index}
