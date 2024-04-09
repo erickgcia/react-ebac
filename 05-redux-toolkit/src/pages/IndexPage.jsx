@@ -3,11 +3,14 @@ import { useAxiosFetch } from '../hooks/useAxiosFetch'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { SkeletonLayout } from '../components/SkeletonLayout'
+import { LOADING } from '../app/status'
 
 export const IndexPage = () => {
-  const { data, loading } = useAxiosFetch({
+  const { data } = useAxiosFetch({
     url: 'https://fakestoreapi.com/products?limit=12',
   })
+
+  const status = useSelector((status) => status.cart.status)
 
   const productCartCounter = useSelector((state) => state.cart.productCount)
   const navigate = useNavigate()
@@ -32,7 +35,7 @@ export const IndexPage = () => {
       </header>
       <main>
         <article className="flex gap-4 flex-wrap items-center justify-center p-12">
-          {!loading ? (
+          {status !== LOADING ? (
             data.map((product) => (
               <ProductCard product={product} key={product.id} />
             ))
