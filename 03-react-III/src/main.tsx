@@ -1,17 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { HomePage } from './pages/HomePage.jsx'
-import { ProductsPage } from './pages/ProductsPage.jsx'
-import { CustomersPage } from './pages/CustomersPage.jsx'
-import { ErrorPage } from './pages/ErrorPage.jsx'
+import { HomePage } from './pages/HomePage.ts'
+import { ProductsPage } from './pages/ProductsPage.ts'
+import { CustomersPage } from './pages/CustomersPage.ts'
+import { ErrorPage } from './pages/ErrorPage.ts'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+type PageRouterProps = {
+  path: string
+  element: JSX.Element
+  errorElement?: JSX.Element
+}
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {
     path: '/products',
@@ -20,13 +26,11 @@ const router = createBrowserRouter([
   {
     path: '/customers',
     element: <CustomersPage />,
-  }
+  },
 ])
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </React.StrictMode>
 )
