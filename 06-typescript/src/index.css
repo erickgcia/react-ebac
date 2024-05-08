@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #242424;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #e1dede;
+}
+
 .grid-autofill {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));

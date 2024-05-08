@@ -2,9 +2,10 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import Error404 from './pages/Error404.jsx'
-import Users from './pages/Users.jsx'
+import Home from './pages/Home.tsx'
+import Error404 from './pages/Error404.tsx'
+import Users from './pages/Users.tsx'
+import UserProfile from './pages/UserProfile.tsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: '/users',
     element: <Users />,
+  },
+  {
+    path: '/users/:username',
+    element: <UserProfile />,
   },
 ])
 
