@@ -13,7 +13,7 @@ type PageRouterProps = {
   errorElement?: JSX.Element
 }
 
-const router = createBrowserRouter([
+const router: PageRouterProps[] = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   },
 ])
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
