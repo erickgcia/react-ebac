@@ -14,10 +14,34 @@ body {
   display: flex;
   align-items: center;
   padding: 1.5rem 2rem;
-  background-color: #e1dede;
+  color: #ffffff;
 }
 
 .grid-autofill {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+}
+
+.g_title {
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #ffffff 15%,
+    #006eff 50%,
+    #3131d4 90%
+  );
+  background-clip: text;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+}
+
+.g_button {
+  opacity: 0;
+  transform: translateY(100%);
 }

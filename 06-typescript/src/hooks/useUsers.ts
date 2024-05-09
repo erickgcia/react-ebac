@@ -6,10 +6,15 @@ type Company = {
 }
 
 type UserParams = {
+  firstName?: string
+  lastName?: string
+  age?: string
   username: string
   email: string
   id: string
   image: string
+  birthDate?: string
+  university?: string
   company: Company
 }
 
