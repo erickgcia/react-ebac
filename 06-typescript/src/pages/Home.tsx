@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 
-function Home(): JSX.Element {
+function Home() {
   useGSAP(() => {
     gsap.to('.g_title', {
       opacity: 1,

@@ -31,7 +31,7 @@ function Users() {
   }
 
   return (
-    <main>
+    <>
       <header className="header justify-between">
         <h1 className="text-2xl font-bold">Users Page</h1>
         <Link
@@ -41,20 +41,22 @@ function Users() {
           Home
         </Link>
       </header>
-      <article className="grid-autofill gap-4 p-8">
-        {users ? (
-          users.map((user) => (
-            <Link key={user.id} to={`/users/${user.username}`}>
-              <UserCard user={user} getDepartmentClass={getDepartmentClass} />
-            </Link>
-          ))
-        ) : (
-          <span className="text-xl text-center md:text-3xl font-bold text-nowrap">
-            No users available.
-          </span>
-        )}
-      </article>
-    </main>
+      <main>
+        <article className="grid-autofill gap-4 p-8">
+          {users ? (
+            users.map((user) => (
+              <Link key={user.id} to={`/users/${user.username}`}>
+                <UserCard user={user} getDepartmentClass={getDepartmentClass} />
+              </Link>
+            ))
+          ) : (
+            <span className="text-xl text-center md:text-3xl font-bold text-nowrap">
+              No users available.
+            </span>
+          )}
+        </article>
+      </main>
+    </>
   )
 }
 

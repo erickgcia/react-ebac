@@ -1,8 +1,10 @@
-function Error404(): JSX.Element {
+function Error404() {
   return (
-    <div>
-      <h1>Error404 Page</h1>
-    </div>
+    <main>
+      <div className="flex items-center justify-center">
+        <h1 className="text-2xl font-bold">Error404 Page</h1>
+      </div>
+    </main>
   )
 }
 
