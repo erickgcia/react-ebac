@@ -5,7 +5,7 @@ import UserCard from '../components/UserCard'
 function UserProfile() {
   const params = useParams<{ username: string }>()
 
-  const { users } = useUsers()
+  const { users } = useUsers() || { users: [] }
 
   const currentUser = users.find((user) => user.username === params.username)
 

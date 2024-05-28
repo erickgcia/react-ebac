@@ -20,6 +20,7 @@ type UserParams = {
 
 export function useUsers() {
   const [users, setUsers] = useState<UserParams[]>([])
+  const [error, setError] = useState<string | null>(null)
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -27,12 +28,13 @@ export function useUsers() {
         const data = await response.data
         setUsers(data.users)
       } catch (err) {
-        console.error(err)
+        setError('Something went wrong.')
+        console.log(`Something went wrong. ${err}`)
       }
     }
 
     fetchUsers()
   }, [])
 
-  return { users }
+  return { users, error }
 }

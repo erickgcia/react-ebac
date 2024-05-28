@@ -36,7 +36,7 @@ describe('UserCard component', () => {
     const usernameTxt = screen.getByText(mockUser.username)
     expect(usernameTxt).toBeInTheDocument()
 
-    const userDpto = screen.getByText(mockUser.company.department)
+    const userDpto = screen.getByText(mockUser.company?.department ?? '')
     expect(userDpto).toBeInTheDocument()
 
     const userEmail = screen.getByText(mockUser.email)
@@ -60,7 +60,7 @@ describe('UserCard component', () => {
     const userCardElement = screen.getByRole('contentinfo')
     expect(userCardElement).toBeInTheDocument()
     expect(getDepartmentClassMock).toHaveBeenCalledWith(
-      mockUser.company.department
+      mockUser.company?.department
     )
   })
 })
