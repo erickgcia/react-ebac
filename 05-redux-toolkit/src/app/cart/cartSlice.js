@@ -29,10 +29,10 @@ export const cartSlice = createSlice({
       state.productCount += 1
     },
     removeProductFromCart: (state, action) => {
-      ;(state.productList = state.productList.filter(
+      state.productList = state.productList.filter(
         (product) => product.id !== action.payload
-      )),
-        (state.productCount -= 1)
+      )
+      state.productCount -= 1
     },
   },
   extraReducers: (builder) => {
